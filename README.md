@@ -1,31 +1,46 @@
 # Newk
 
-TODO: Write a gem description
+Remove the need for `.new` in Ruby. You should probably never use this.
 
-## Installation
+## Newk a class
 
-Add this line to your application's Gemfile:
+```rb
+class Animal
+  def initialize(type)
+    @type = type
+  end
+end
 
-```ruby
-gem 'newk'
+require 'newk'
+Newk.newk Animal
+
+Animal(:cat) # => #<Animal:0x007ff0992b3ea0 @type=:cat>
 ```
 
-And then execute:
+## Newk everything
 
-    $ bundle
+```rb
+class Animal
+  def initialize(type)
+    @type = type
+  end
+end
 
-Or install it yourself as:
+require 'newk/everything'
 
-    $ gem install newk
+Animal(:cat) # => #<Animal:0x007ff0992b3ea0 @type=:cat>
+```
 
-## Usage
+## ...even in the future
 
-TODO: Write usage instructions here
+```rb
+require 'newk/everything'
 
-## Contributing
+class Animal
+  def initialize(type)
+    @type = type
+  end
+end
 
-1. Fork it ( https://github.com/[my-github-username]/newk/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Animal(:cat) # => #<Animal:0x007ff0992b3ea0 @type=:cat>
+```

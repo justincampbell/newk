@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Newk::VERSION
   spec.authors       = ["Justin Campbell"]
   spec.email         = ["justin@justincampbell.me"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = "Remove the need for `.new` in Ruby"
+  spec.description   = "Remove the need for `.new` in Ruby. You should probably never use this."
+  spec.homepage      = "https://github.com/justincampbell/newk"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
