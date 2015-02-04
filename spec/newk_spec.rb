@@ -29,6 +29,11 @@ describe Newk do
       assert Future().worked?
     end
 
+    it "defines methods for future structs" do
+      NamedStruct = Struct.new(:value)
+      assert NamedStruct(true).value
+    end
+
     it "doesn't clobber existing methods" do
       assert_equal [], Array(nil)
       assert_equal [:foo], Array(:foo)
@@ -37,7 +42,7 @@ describe Newk do
 end
 
 def cleanup_methods
-  [:Future, :Klass].each do |klass|
+  [:Future, :Klass, :NamedStruct].each do |klass|
     Kernel.send :undef, klass rescue nil
   end
 end
